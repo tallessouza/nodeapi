@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from 'express'
 
 export function ensureAdmin(
   request: Request,
@@ -6,13 +6,13 @@ export function ensureAdmin(
   next: NextFunction
 ) {
   // Verificar se usuario admin
-  const admin = true;
+  const admin = false
 
   if (admin) {
-    return next();
+    return next()
   }
 
   return response.status(401).json({
-    error: "Unauthorized",
-  });
+    error: 'Unauthorized'
+  })
 }

@@ -3,30 +3,30 @@ import {
   PrimaryColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
-} from "typeorm";
+  UpdateDateColumn
+} from 'typeorm'
 
-import { v4 as uuid } from "uuid";
+import { v4 as uuid } from 'uuid'
 
-@Entity("tags")
+@Entity('tags')
 class Tag {
   @PrimaryColumn()
-  readonly id: string;
+  readonly id: string
 
   @Column()
-  name: string;
+  name: string
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at: Date
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updated_at: Date
 
   constructor() {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuid()
     }
   }
 }
 
-export { Tag };
+export { Tag }
